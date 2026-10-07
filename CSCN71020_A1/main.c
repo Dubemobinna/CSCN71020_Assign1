@@ -15,12 +15,14 @@ void main() {
 	int inputNum;
 
 	printf("Enter operation number: ");
-	scanf_s("%1o", &inputNum);
+	scanf_s("%d", &inputNum); // fix: read the menu choice as a normal whole number (was "%lo", octal)
 
 	switch (inputNum)
 	{
 	case 1:
+		// first option: add two numbers entered by the user
 		add();
+		break; // fix: stop here so add() does not fall through into subtract()
 	case 2:
 		//option 2: subtract the two numbers the user enters
 		subtract();
