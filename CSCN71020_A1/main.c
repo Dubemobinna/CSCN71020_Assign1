@@ -3,6 +3,7 @@
 void printWelcomeMenu();
 void printOptions();
 void add();
+void subtract(); //subtract the second number from the first number
 
 
 void main() {
@@ -20,6 +21,10 @@ void main() {
 	{
 	case 1:
 		add();
+	case 2:
+		//option 2: subtract the two numbers the user enters
+		subtract();
+		break;
 	}
 
 }
@@ -44,4 +49,23 @@ void add() {
 	scanf_s("%lf", &num2);
 	result = num1 + num2;
 	printf("%lf + %lf = %lf\n", num1, num2, result);
+}
+/*
+* subtract()
+* Asks the user for two numbers, subtracts the second
+* number from the first, and prints the result.
+* Fix: replaces the old version that only printed "Wrong function".
+*/
+void subtract() {
+	double num1, num2, result; // the two numbers entered and the answer
+
+	printf("Enter the first number: ");
+	scanf_s("%lf", &num1); // read the first value
+
+	printf("Enter the second number: ");
+	scanf_s("%lf", &num2); // read the second value
+
+	result = num1 - num2; // subtract the second number from the first
+	printf("%lf - %lf = %lf\n", num1, num2, result);
+	// show the calculation
 }
